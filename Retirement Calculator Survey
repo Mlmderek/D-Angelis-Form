@@ -1,0 +1,1834 @@
+<div id="ghl-retirement-form-container">
+  <style>
+    #ghl-retirement-form-container {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    #ghl-retirement-form-container * {
+      box-sizing: border-box;
+    }
+    
+    .ghl-form-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    
+    .ghl-form-left {
+      background-color: #f5f5f0;
+      padding: 60px;
+      border-radius: 8px;
+    }
+    
+    .ghl-form-logo {
+      margin-bottom: 40px;
+    }
+    
+    .ghl-form-logo img {
+      width: 200px;
+      height: auto;
+      display: block;
+    }
+    
+    .ghl-form-title {
+      font-size: 48px;
+      font-weight: 300;
+      color: #2c2c2c;
+      line-height: 1.2;
+      margin-bottom: 30px;
+    }
+    
+    .ghl-form-subtitle {
+      font-size: 18px;
+      color: #5a5a5a;
+      line-height: 1.6;
+      margin-bottom: 50px;
+    }
+    
+    .ghl-testimonial-section {
+      margin-top: 60px;
+    }
+    
+    .ghl-testimonial-label {
+      color: #1a7a5e;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    
+    .ghl-testimonial-quote {
+      font-size: 16px;
+      color: #2c2c2c;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    
+    .ghl-testimonial-author {
+      font-size: 14px;
+      color: #2c2c2c;
+      font-weight: 600;
+    }
+    
+    .ghl-testimonial-disclaimer {
+      font-size: 12px;
+      color: #7a7a7a;
+      font-style: italic;
+      margin-top: 40px;
+      line-height: 1.4;
+    }
+    
+    .ghl-form-right {
+      padding: 40px 60px;
+    }
+    
+    .ghl-progress-bar {
+      width: 100%;
+      height: 4px;
+      background-color: #e0e0e0;
+      border-radius: 2px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    
+    .ghl-progress-fill {
+      height: 100%;
+      background-color: #1a7a5e;
+      width: 11%;
+      transition: width 0.3s ease;
+    }
+    
+    .ghl-progress-text {
+      text-align: right;
+      font-size: 14px;
+      color: #5a5a5a;
+      margin-bottom: 40px;
+    }
+    
+    .ghl-form-group {
+      margin-bottom: 25px;
+    }
+    
+    .ghl-form-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #2c2c2c;
+      margin-bottom: 8px;
+    }
+    
+    .ghl-form-input,
+    .ghl-form-select {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 16px;
+      border: 2px solid #d0d0d0;
+      border-radius: 4px;
+      background-color: #ffffff;
+      color: #2c2c2c;
+      transition: border-color 0.2s ease;
+    }
+    
+    .ghl-form-input:focus,
+    .ghl-form-select:focus {
+      outline: none;
+      border-color: #1a7a5e;
+    }
+    
+    .ghl-form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%232c2c2c' d='M0 0l6 8 6-8z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+    }
+    
+    .ghl-form-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+    }
+    
+    .ghl-form-privacy {
+      text-align: center;
+      font-size: 14px;
+      color: #5a5a5a;
+      margin: 30px 0 20px;
+      line-height: 1.5;
+    }
+    
+    .ghl-form-privacy a {
+      color: #1a7a5e;
+      text-decoration: none;
+    }
+    
+    .ghl-form-privacy a:hover {
+      text-decoration: underline;
+    }
+    
+    .ghl-form-button {
+      width: 100%;
+      padding: 16px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #2c2c2c;
+      background-color: #CF973B;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      margin-bottom: 20px;
+    }
+    
+    .ghl-form-button:hover {
+      background-color: #b88632;
+    }
+    
+    .ghl-form-button:active {
+      transform: translateY(1px);
+    }
+    
+    .ghl-slider-container {
+      margin: 30px 0;
+    }
+    
+    .ghl-slider-instruction {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: #2c2c2c;
+      margin-bottom: 25px;
+    }
+    
+    .ghl-value-display-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .ghl-value-control-btn {
+      width: 50px;
+      height: 50px;
+      border: 2px solid #1a7a5e;
+      border-radius: 4px;
+      background-color: #ffffff;
+      color: #1a7a5e;
+      font-size: 24px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .ghl-value-control-btn:hover {
+      background-color: #1a7a5e;
+      color: #ffffff;
+    }
+    
+    .ghl-value-control-btn:active {
+      transform: scale(0.95);
+    }
+    
+    .ghl-value-display {
+      flex: 1;
+      padding: 20px;
+      font-size: 48px;
+      font-weight: 300;
+      text-align: center;
+      border: 2px solid #1a7a5e;
+      border-radius: 4px;
+      background-color: #ffffff;
+      color: #2c2c2c;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: text;
+      transition: border-color 0.2s ease;
+    }
+    
+    .ghl-value-display:focus {
+      outline: none;
+      border-color: #0f5a47;
+      box-shadow: 0 0 0 3px rgba(26, 122, 94, 0.1);
+    }
+    
+    .ghl-value-display-input {
+      width: 100%;
+      text-align: center;
+      border: none;
+      background: transparent;
+      font-size: 48px;
+      font-weight: 300;
+      color: #2c2c2c;
+      outline: none;
+    }
+    
+    .ghl-slider {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: linear-gradient(to right, #1a7a5e 0%, #1a7a5e 50%, #d0d0d0 50%, #d0d0d0 100%);
+      outline: none;
+      appearance: none;
+      margin: 20px 0 40px;
+    }
+    
+    .ghl-slider::-webkit-slider-thumb {
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid #1a7a5e;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .ghl-slider::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid #1a7a5e;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .ghl-button-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    .ghl-choice-button {
+      padding: 50px 32px;
+      font-size: 48px;
+      font-weight: 300;
+      color: #1a7a5e;
+      background-color: #ffffff;
+      border: 2px solid #1a7a5e;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .ghl-choice-button:hover {
+      background-color: #f0f9f6;
+    }
+    
+    .ghl-choice-button.selected {
+      background-color: #1a7a5e;
+      color: #ffffff;
+    }
+    
+    .ghl-toggle-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin: 30px 0;
+    }
+    
+    .ghl-toggle-switch {
+      position: relative;
+      width: 60px;
+      height: 32px;
+      background-color: #d0d0d0;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .ghl-toggle-switch.active {
+      background-color: #1a7a5e;
+    }
+    
+    .ghl-toggle-knob {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 24px;
+      height: 24px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+    
+    .ghl-toggle-switch.active .ghl-toggle-knob {
+      transform: translateX(28px);
+    }
+    
+    .ghl-toggle-label {
+      font-size: 16px;
+      font-weight: 600;
+      color: #2c2c2c;
+    }
+    
+    .ghl-consultation-text {
+      text-align: center;
+      font-size: 14px;
+      color: #5a5a5a;
+      line-height: 1.6;
+      margin: 25px 0;
+    }
+    
+    .ghl-disclaimer-text {
+      text-align: center;
+      font-size: 11px;
+      color: #7a7a7a;
+      line-height: 1.5;
+      margin-top: 30px;
+    }
+    
+    .ghl-disclaimer-text a {
+      color: #1a7a5e;
+      text-decoration: none;
+    }
+    
+    .ghl-form-step {
+      display: none;
+    }
+    
+    .ghl-form-step.active {
+      display: block;
+    }
+    
+    .ghl-results-wrapper {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .ghl-results-sidebar {
+      background-color: #f5f5f0;
+      padding: 30px;
+      border-radius: 8px;
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+    
+    .ghl-results-main {
+      padding: 30px;
+    }
+    
+    .ghl-sidebar-section {
+      margin-bottom: 30px;
+    }
+    
+    .ghl-sidebar-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #2c2c2c;
+      margin-bottom: 8px;
+    }
+    
+    .ghl-sidebar-subtitle {
+      font-size: 12px;
+      color: #5a5a5a;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+    
+    .ghl-sidebar-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #2c2c2c;
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .ghl-sidebar-input-group {
+      position: relative;
+      margin-bottom: 15px;
+    }
+    
+    .ghl-sidebar-input {
+      width: 100%;
+      padding: 10px 12px;
+      padding-left: 24px;
+      font-size: 14px;
+      border: 1px solid #d0d0d0;
+      border-radius: 4px;
+      background-color: #ffffff;
+    }
+    
+    .ghl-sidebar-input:focus {
+      outline: none;
+      border-color: #1a7a5e;
+    }
+    
+    .ghl-dollar-sign {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #5a5a5a;
+      font-size: 14px;
+    }
+    
+    .ghl-sidebar-slider {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #1a7a5e;
+      outline: none;
+      appearance: none;
+      margin-top: 8px;
+    }
+    
+    .ghl-sidebar-slider::-webkit-slider-thumb {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid #1a7a5e;
+      cursor: pointer;
+    }
+    
+    .ghl-sidebar-slider::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid #1a7a5e;
+      cursor: pointer;
+    }
+    
+    .ghl-sidebar-link {
+      color: #1a7a5e;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .ghl-recalculate-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #f5b841;
+      color: #2c2c2c;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    
+    .ghl-recalculate-btn:hover {
+      background-color: #e5a831;
+    }
+    
+    .ghl-results-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .ghl-results-title {
+      font-size: 36px;
+      font-weight: 400;
+      color: #2c2c2c;
+    }
+    
+    .ghl-focus-badge {
+      background-color: #c9302c;
+      color: #ffffff;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .ghl-shortfall-text {
+      font-size: 14px;
+      color: #5a5a5a;
+      margin-left: 10px;
+    }
+    
+    .ghl-progress-section {
+      margin-bottom: 30px;
+    }
+    
+    .ghl-progress-section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #2c2c2c;
+      margin-bottom: 15px;
+    }
+    
+    .ghl-progress-bar-large {
+      width: 100%;
+      height: 30px;
+      background: linear-gradient(to right, #c9302c 0%, #d9534f 10%, #f0ad4e 20%, #5bc0de 40%, #5cb85c 60%, #1a7a5e 100%);
+      border-radius: 15px;
+      position: relative;
+      margin-bottom: 10px;
+    }
+    
+    .ghl-progress-marker {
+      position: absolute;
+      top: -8px;
+      left: 18%;
+      background-color: #2c2c2c;
+      color: #ffffff;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    
+    .ghl-progress-marker::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #2c2c2c;
+    }
+    
+    .ghl-strategy-question {
+      font-size: 20px;
+      font-weight: 700;
+      color: #2c2c2c;
+      margin: 30px 0 15px;
+    }
+    
+    .ghl-strategy-text {
+      font-size: 14px;
+      color: #5a5a5a;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+    
+    .ghl-cta-box {
+      background-color: #1a7a5e;
+      color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    
+    .ghl-cta-text {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    
+    .ghl-cta-phone {
+      font-size: 24px;
+      font-weight: 700;
+      color: #f5b841;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .ghl-chart-container {
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 30px;
+      margin-bottom: 30px;
+      position: relative;
+      width: 100%;
+      height: 500px;
+    }
+    
+    .ghl-chart-wrapper {
+      position: relative;
+      width: 100%;
+      height: 400px;
+    }
+    
+    .ghl-chart-legend {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+      font-size: 12px;
+    }
+    
+    .ghl-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .ghl-legend-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 3px;
+    }
+    
+    .ghl-info-box {
+      background-color: #d9edf7;
+      border-left: 4px solid #5bc0de;
+      padding: 20px;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    
+    .ghl-info-text {
+      font-size: 13px;
+      color: #31708f;
+      line-height: 1.6;
+    }
+    
+    @media (max-width: 1200px) {
+      .ghl-results-wrapper {
+        grid-template-columns: 1fr;
+      }
+      
+      .ghl-results-sidebar {
+        order: 2;
+        max-height: none;
+      }
+      
+      .ghl-results-main {
+        order: 1;
+      }
+    }
+    
+    @media (max-width: 1024px) {
+      .ghl-form-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .ghl-form-left {
+        padding: 40px;
+      }
+      
+      .ghl-form-right {
+        padding: 30px 40px;
+      }
+      
+      .ghl-form-title {
+        font-size: 38px;
+      }
+      
+      .ghl-value-display {
+        font-size: 40px;
+      }
+      
+      .ghl-choice-button {
+        font-size: 40px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      #ghl-retirement-form-container {
+        padding: 15px;
+      }
+      
+      .ghl-form-left {
+        padding: 30px 25px;
+      }
+      
+      .ghl-form-right {
+        padding: 25px 20px;
+      }
+      
+      .ghl-form-title {
+        font-size: 32px;
+      }
+      
+      .ghl-form-subtitle {
+        font-size: 16px;
+      }
+      
+      .ghl-form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      
+      .ghl-value-display {
+        font-size: 36px;
+      }
+      
+      .ghl-value-display-input {
+        font-size: 36px;
+      }
+      
+      .ghl-value-control-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+      }
+      
+      .ghl-choice-button {
+        font-size: 36px;
+        padding: 40px 24px;
+      }
+      
+      .ghl-button-group {
+        gap: 15px;
+      }
+      
+      .ghl-results-sidebar {
+        padding: 20px;
+      }
+      
+      .ghl-results-main {
+        padding: 20px;
+      }
+      
+      .ghl-cta-box {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+      
+      .ghl-chart-container {
+        height: 400px;
+      }
+      
+      .ghl-chart-wrapper {
+        height: 300px;
+      }
+      
+      .ghl-form-logo img {
+        width: 160px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .ghl-form-left {
+        padding: 25px 20px;
+      }
+      
+      .ghl-form-title {
+        font-size: 28px;
+      }
+      
+      .ghl-testimonial-section {
+        margin-top: 40px;
+      }
+      
+      .ghl-value-display {
+        font-size: 32px;
+        padding: 16px;
+      }
+      
+      .ghl-value-display-input {
+        font-size: 32px;
+      }
+      
+      .ghl-value-control-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+      }
+      
+      .ghl-choice-button {
+        font-size: 32px;
+        padding: 35px 20px;
+      }
+      
+      .ghl-results-title {
+        font-size: 28px;
+      }
+      
+      .ghl-form-logo img {
+        width: 140px;
+      }
+    }
+  </style>
+  
+  <div id="ghl-form-container" class="ghl-form-wrapper">
+    <div class="ghl-form-left">
+      <div class="ghl-form-logo">
+        <img src="https://storage.googleapis.com/msgsndr/gJPnHKV9JEFTdRWeEvwu/media/68eeac161c7ccd4f9bfcafeb.svg" alt="Fisher Investments">
+      </div>
+      
+      <div id="ghl-left-content">
+        <h1 class="ghl-form-title">Personalize Your Experience</h1>
+        
+        <p class="ghl-form-subtitle">
+          Knowing a bit about you helps us tailor retirement insights to your situation. We value your privacy, and we'll never sell your personal information.
+        </p>
+        
+        <div class="ghl-testimonial-section">
+          <div class="ghl-testimonial-label">SEE WHAT OUR CLIENTS SAY</div>
+          <p class="ghl-testimonial-quote">"As a fiduciary, Fisher acts in my best interests."</p>
+          <p class="ghl-testimonial-author">WILLIAM, 7-year client from TX</p>
+          <p class="ghl-testimonial-disclaimer">
+            Clients are uncompensated for testimonials, which reflect their views at the time.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ghl-form-right">
+      <div class="ghl-progress-bar">
+        <div class="ghl-progress-fill" id="ghl-progress"></div>
+      </div>
+      <div class="ghl-progress-text" id="ghl-progress-text">11%</div>
+      
+      <div id="ghl-step-1" class="ghl-form-step active">
+        <div class="ghl-form-row">
+          <div class="ghl-form-group">
+            <label class="ghl-form-label" for="ghl-title">Title</label>
+            <select class="ghl-form-select" id="ghl-title" name="title" required>
+              <option value="">Select</option>
+              <option value="Mr.">Mr.</option>
+              <option value="Mrs.">Mrs.</option>
+              <option value="Ms.">Ms.</option>
+              <option value="Dr.">Dr.</option>
+              <option value="Prof.">Prof.</option>
+            </select>
+          </div>
+          
+          <div class="ghl-form-group">
+            <label class="ghl-form-label" for="ghl-firstname">First Name</label>
+            <input class="ghl-form-input" type="text" id="ghl-firstname" name="firstname" required>
+          </div>
+        </div>
+        
+        <div class="ghl-form-group">
+          <label class="ghl-form-label" for="ghl-lastname">Last Name</label>
+          <input class="ghl-form-input" type="text" id="ghl-lastname" name="lastname" required>
+        </div>
+        
+        <div class="ghl-form-privacy">
+          By continuing you agree to our <a href="#" target="_blank">privacy policy</a>.
+        </div>
+        
+        <div class="ghl-form-privacy">
+          California and Oregon residents <a href="#" target="_blank">here</a>.
+        </div>
+        
+        <button type="button" class="ghl-form-button" onclick="ghlNextStep()">Continue</button>
+      </div>
+      
+      <div id="ghl-step-2" class="ghl-form-step">
+        <div class="ghl-slider-instruction">Use the slider or type your age below.</div>
+        
+        <div class="ghl-value-display-wrapper">
+          <button class="ghl-value-control-btn" onclick="ghlDecrement('age')" type="button">−</button>
+          <div class="ghl-value-display" id="ghl-age-display-wrapper">
+            <input type="text" class="ghl-value-display-input" id="ghl-age-display" value="55" data-slider="ghl-age-slider">
+          </div>
+          <button class="ghl-value-control-btn" onclick="ghlIncrement('age')" type="button">+</button>
+        </div>
+        
+        <input type="range" class="ghl-slider" id="ghl-age-slider" min="18" max="100" value="55">
+        
+        <button type="button" class="ghl-form-button" onclick="ghlNextStep()">Continue</button>
+      </div>
+      
+      <div id="ghl-step-3" class="ghl-form-step">
+        <div class="ghl-button-group">
+          <button type="button" class="ghl-choice-button" id="ghl-retired-yes" onclick="ghlSelectRetired('yes')">Yes</button>
+          <button type="button" class="ghl-choice-button" id="ghl-retired-no" onclick="ghlSelectRetired('no')">No</button>
+        </div>
+        
+        <button type="button" class="ghl-form-button" onclick="ghlNextStep()">Continue</button>
+      </div>
+      
+      <div id="ghl-step-3-5" class="ghl-form-step">
+        <div class="ghl-slider-instruction">Use the slider or type the years below.</div>
+        
+        <div class="ghl-value-display-wrapper">
+          <button class="ghl-value-control-btn" onclick="ghlDecrement('work-years')" type="button">−</button>
+          <div class="ghl-value-display" id="ghl-work-years-display-wrapper">
+            <input type="text" class="ghl-value-display-input" id="ghl-work-years-display" value="5" data-slider="ghl-work-years-slider">
+          </div>
+          <button class="ghl-value-control-btn" onclick="ghlIncrement('work-years')" type="button">+</button>
+        </div>
+        
+        <input type="range" class="ghl-slider" id="ghl-work-years-slider" min="0" max="50" value="5">
+        
+        <button type="button" class="ghl-form-button" onclick="ghlNextStep()">Continue</button>
+      </div>
+      
+      <div id="ghl-step-4" class="ghl-form-step">
+        <div class="ghl-slider-instruction">Use the slider or type the years below.</div>
+        
+        <div class="ghl-value-display-wrapper">
+          <button class="ghl-value-control-btn" onclick="ghlDecrement('retired-years')" type="button">−</button>
+          <div class="ghl-value-display" id="ghl-retired-years-display-wrapper">
+            <input type="text" class="ghl-value-display-input" id="ghl-retired-years-display" value="5" data-slider="ghl-retired-years-slider">
+          </div>
+          <button class="ghl-value-control-btn" onclick="ghlIncrement('retired-years')" type="button">+</button>
+        </div>
+        
+        <input type="range" class="ghl-slider" id="ghl-retired-years-slider" min="0" max="50" value="5">
+        
+        <button type="button" class="ghl-form-button" onclick="ghlNextStep()">Continue</button>
+      </div>
+      
+      <div id="ghl-step-5" class="ghl-form-step">
+        <div class="ghl-slider-instruction">Use the slider or type your amount below. If retired use $0.</div>
+        
+        <div class="ghl-value-display-wrapper">
+          <button class="ghl-value-control-btn" onclick="ghlDecrement('savings')" type="button">−</button>
+          <div class="ghl-value-display" id="ghl-savings-display-wrapper">
+            <input type="text" class="ghl-value-display-input" id="ghl-savings-display" value="$0" data-slider="ghl-savings-slider">
+          </div>
+          <button class="ghl-value-control-btn" onclick="ghlIncrement('savings')" type="button">+</button>
+        </div>
+        
+        <input type="range" class="ghl-slider" id="ghl-savings-slider" min="0" max="10000" value="0" step="50">
+        
+        <button type="button" class="ghl-form-button" onclick="ghlNextStep()">Continue</button>
+      </div>
+      
+      <div id="ghl-step-6" class="ghl-form-step">
+        <div class="ghl-slider-instruction">Use the slider or type your assets below.</div>
+        
+        <div class="ghl-value-display-wrapper">
+          <button class="ghl-value-control-btn" onclick="ghlDecrement('assets')" type="button">−</button>
+          <div class="ghl-value-display" id="ghl-assets-display-wrapper">
+            <input type="text" class="ghl-value-display-input" id="ghl-assets-display" value="$ 1,000,000" data-slider="ghl-assets-slider">
+          </div>
+          <button class="ghl-value-control-btn" onclick="ghlIncrement('assets')" type="button">+</button>
+        </div>
+        
+        <input type="range" class="ghl-slider" id="ghl-assets-slider" min="0" max="10000000" value="1000000" step="10000">
+        
+        <button type="button" class="ghl-form-button" onclick="ghlNextStep()">Continue</button>
+      </div>
+      
+      <div id="ghl-step-7" class="ghl-form-step">
+        <div class="ghl-slider-instruction">Use the slider or type your amount below.</div>
+        
+        <div class="ghl-value-display-wrapper">
+          <button class="ghl-value-control-btn" onclick="ghlDecrement('income')" type="button">−</button>
+          <div class="ghl-value-display" id="ghl-income-display-wrapper">
+            <input type="text" class="ghl-value-display-input" id="ghl-income-display" value="$ 6,000" data-slider="ghl-income-slider">
+          </div>
+          <button class="ghl-value-control-btn" onclick="ghlIncrement('income')" type="button">+</button>
+        </div>
+        
+        <input type="range" class="ghl-slider" id="ghl-income-slider" min="0" max="50000" value="6000" step="100">
+        
+        <button type="button" class="ghl-form-button" onclick="ghlNextStep()">Continue</button>
+      </div>
+      
+      <div id="ghl-step-8" class="ghl-form-step">
+        <div class="ghl-form-group">
+          <label class="ghl-form-label" for="ghl-zipcode">Zip Code</label>
+          <input class="ghl-form-input" type="text" id="ghl-zipcode" name="zipcode" maxlength="5" pattern="[0-9]{5}" required>
+        </div>
+        
+        <button type="button" class="ghl-form-button" onclick="ghlNextStep()">Continue</button>
+      </div>
+      
+      <div id="ghl-step-9" class="ghl-form-step">
+        <div class="ghl-form-group">
+          <label class="ghl-form-label" for="ghl-phone">Phone</label>
+          <input class="ghl-form-input" type="tel" id="ghl-phone" name="phone" required>
+        </div>
+        
+        <div class="ghl-form-group">
+          <label class="ghl-form-label" for="ghl-email">Email</label>
+          <input class="ghl-form-input" type="email" id="ghl-email" name="email" required>
+        </div>
+        
+        <div class="ghl-consultation-text">
+          It never hurts to get a second opinion on your retirement plan. Would you be interested in scheduling a free financial planning consultation from Fisher Investments?**
+        </div>
+        
+        <div class="ghl-toggle-container">
+          <div class="ghl-toggle-switch" id="ghl-consultation-toggle" onclick="ghlToggleConsultation()">
+            <div class="ghl-toggle-knob"></div>
+          </div>
+          <span class="ghl-toggle-label">YES</span>
+        </div>
+        
+        <button type="button" class="ghl-form-button" onclick="ghlSubmitForm()">Continue*</button>
+        
+        <div class="ghl-disclaimer-text">
+          **Personal consultations are available for those with at least $1,000,000 in investable assets.
+        </div>
+        
+        <div class="ghl-disclaimer-text">
+          *By providing your number, you agree to Fisher's <a href="#" target="_blank">terms</a> and <a href="#" target="_blank">privacy policy</a>. You also consent to receive from Fisher recurring automated phone calls and texts, including information, appointment confirmations and reminders, and promotions. Consenting to calls and texts is not required to receive any service. Reply STOP to unsubscribe from texts. Message frequency varies and message & data rates may apply.
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="ghl-results-container" class="ghl-results-wrapper" style="display: none;">
+    <div class="ghl-results-sidebar">
+      <div class="ghl-form-logo">
+        <img src="https://storage.googleapis.com/msgsndr/gJPnHKV9JEFTdRWeEvwu/media/68eeac161c7ccd4f9bfcafeb.svg" alt="Fisher Investments">
+      </div>
+      
+      <div class="ghl-sidebar-section">
+        <div class="ghl-sidebar-title">Personal Details</div>
+        <div class="ghl-sidebar-subtitle">Adjust your inputs below to see how the changes you make can impact your results.</div>
+        
+        <div style="margin-bottom: 15px;">
+          <div class="ghl-sidebar-label">
+            <span>Retirement Age</span>
+          </div>
+          <input type="number" class="ghl-sidebar-input" id="calc-retirement-age" value="55" min="18" max="100" style="padding-left: 12px;">
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+          <div class="ghl-sidebar-label">
+            <span>Life Expectancy</span>
+            <span style="color: #5bc0de; cursor: pointer;">ⓘ</span>
+          </div>
+          <input type="number" class="ghl-sidebar-input" id="calc-life-expectancy" value="98" min="50" max="120" style="padding-left: 12px;">
+        </div>
+        
+        <a href="#" class="ghl-sidebar-link">Get Help Estimating Life Expectancy</a>
+      </div>
+      
+      <div class="ghl-sidebar-section">
+        <div class="ghl-sidebar-label">
+          <span>Investable Assets</span>
+          <span style="color: #5bc0de; cursor: pointer;">ⓘ</span>
+        </div>
+        <div class="ghl-sidebar-input-group">
+          <span class="ghl-dollar-sign">$</span>
+          <input type="text" class="ghl-sidebar-input" id="calc-assets" value="1,000,000">
+        </div>
+        <input type="range" class="ghl-sidebar-slider" id="calc-assets-slider" min="0" max="10000000" value="1000000" step="10000">
+      </div>
+      
+      <div class="ghl-sidebar-section">
+        <div class="ghl-sidebar-label">
+          <span>Monthly Contributions Until Retirement</span>
+        </div>
+        <div class="ghl-sidebar-input-group">
+          <span class="ghl-dollar-sign">$</span>
+          <input type="text" class="ghl-sidebar-input" id="calc-contributions" value="1,400">
+        </div>
+        <input type="range" class="ghl-sidebar-slider" id="calc-contributions-slider" min="0" max="10000" value="1400" step="50">
+      </div>
+      
+      <div class="ghl-sidebar-section">
+        <div class="ghl-sidebar-label">
+          <span>Monthly Income Needed for Expenses</span>
+        </div>
+        <div class="ghl-sidebar-input-group">
+          <span class="ghl-dollar-sign">$</span>
+          <input type="text" class="ghl-sidebar-input" id="calc-expenses" value="6,000">
+        </div>
+        <input type="range" class="ghl-sidebar-slider" id="calc-expenses-slider" min="0" max="50000" value="6000" step="100">
+      </div>
+      
+      <div class="ghl-sidebar-section">
+        <div class="ghl-sidebar-label">
+          <span>Rate of Return</span>
+        </div>
+        <div class="ghl-sidebar-input-group">
+          <input type="text" class="ghl-sidebar-input" id="calc-return-rate" value="6" style="padding-left: 12px; text-align: right; padding-right: 28px;">
+          <span style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #5a5a5a;">%</span>
+        </div>
+        <input type="range" class="ghl-sidebar-slider" id="calc-return-slider" min="0" max="15" value="6" step="0.1">
+        <a href="#" class="ghl-sidebar-link">Edit Me</a>
+      </div>
+      
+      <div class="ghl-sidebar-section">
+        <div class="ghl-sidebar-title">Social Security Benefits</div>
+        
+        <div style="margin-bottom: 15px;">
+          <div class="ghl-sidebar-label">
+            <span>Income the Last Year You Worked</span>
+          </div>
+          <div class="ghl-sidebar-input-group">
+            <span class="ghl-dollar-sign">$</span>
+            <input type="text" class="ghl-sidebar-input" id="calc-ss-income" value="0">
+          </div>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+          <div class="ghl-sidebar-label">
+            <span>Benefits Collected Monthly</span>
+          </div>
+          <div class="ghl-sidebar-input-group">
+            <span class="ghl-dollar-sign">$</span>
+            <input type="text" class="ghl-sidebar-input" id="calc-ss-benefits" value="1,711">
+          </div>
+        </div>
+      </div>
+      
+      <div class="ghl-sidebar-section">
+        <div class="ghl-sidebar-title">Retirement Income</div>
+        
+        <div class="ghl-sidebar-label">
+          <span>Additional Monthly Income</span>
+          <span style="color: #5bc0de; cursor: pointer;">ⓘ</span>
+        </div>
+        <div class="ghl-sidebar-input-group">
+          <span class="ghl-dollar-sign">$</span>
+          <input type="text" class="ghl-sidebar-input" id="calc-additional-income" value="0">
+        </div>
+      </div>
+      
+      <div class="ghl-sidebar-section">
+        <div class="ghl-sidebar-title">Inflation Rate</div>
+        <div class="ghl-sidebar-subtitle">Our calculator accounts for a 4.78% inflation rate. Use the slider to adjust the inflation rate manually.</div>
+        
+        <div class="ghl-sidebar-input-group">
+          <input type="text" class="ghl-sidebar-input" id="calc-inflation" value="4.78" style="padding-left: 12px; text-align: right; padding-right: 28px;">
+          <span style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #5a5a5a;">%</span>
+        </div>
+        <input type="range" class="ghl-sidebar-slider" id="calc-inflation-slider" min="0" max="10" value="4.78" step="0.01">
+      </div>
+      
+      <button class="ghl-recalculate-btn" onclick="ghlRecalculate()">Recalculate</button>
+    </div>
+    
+    <div class="ghl-results-main">
+      <div class="ghl-results-header">
+        <h1 class="ghl-results-title">Results</h1>
+        <div>
+          <span class="ghl-focus-badge">FOCUS ON YOUR FUTURE</span>
+          <span class="ghl-shortfall-text">You may have a <strong id="shortfall-amount">$1,058,720</strong> shortfall.</span>
+        </div>
+      </div>
+      
+      <div class="ghl-progress-section">
+        <div class="ghl-progress-section-title">Retirement Portfolio Progress</div>
+        <div class="ghl-progress-bar-large">
+          <div class="ghl-progress-marker" id="progress-marker">49%</div>
+        </div>
+      </div>
+      
+      <h2 class="ghl-strategy-question">Is your retirement strategy really working for you?</h2>
+      <p class="ghl-strategy-text">
+        We estimate you may have <strong id="percentage-estimate">49%</strong> of what you need to reach your life expectancy of <strong id="life-expect-display">98</strong>, based on your inputs.<br>
+        You may need to save more or spend less. Try adjusting your details to see how you could achieve better results.
+      </p>
+      
+      <div class="ghl-cta-box">
+        <div class="ghl-cta-text">Schedule an Appointment Today</div>
+        <a href="tel:888-947-6166" class="ghl-cta-phone">📞 888-947-6166</a>
+      </div>
+      
+      <div class="ghl-chart-container">
+        <div class="ghl-chart-wrapper">
+          <canvas id="ghl-retirement-chart"></canvas>
+        </div>
+        <div class="ghl-chart-legend">
+          <div class="ghl-legend-item">
+            <div class="ghl-legend-color" style="background-color: #1a5a4a;"></div>
+            <span>Amount Saved $1M</span>
+          </div>
+          <div class="ghl-legend-item">
+            <div class="ghl-legend-color" style="background-color: #2a7a5e;"></div>
+            <span>Amount Needed $10M</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ghl-info-box">
+        <p class="ghl-info-text">
+          Factoring in your Social Security benefits, we estimate you'll need to take a monthly portfolio withdrawal of <strong id="withdrawal-amount">$4,289</strong> in order to cover your expenses.
+        </p>
+      </div>
+      
+      <div class="ghl-cta-box">
+        <div class="ghl-cta-text">Learn How Fisher Investments Can Help</div>
+        <a href="tel:888-947-6166" class="ghl-cta-phone">📞 888-947-6166</a>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <script>
+    (function() {
+      let currentStep = 1;
+      const formData = {};
+      let retirementChart = null;
+      
+      const sliderConfigs = {
+        'age': { min: 18, max: 100, step: 1, format: 'number' },
+        'work-years': { min: 0, max: 50, step: 1, format: 'number' },
+        'retired-years': { min: 0, max: 50, step: 1, format: 'number' },
+        'savings': { min: 0, max: 10000, step: 50, format: 'currency' },
+        'assets': { min: 0, max: 10000000, step: 10000, format: 'currency' },
+        'income': { min: 0, max: 50000, step: 100, format: 'currency' }
+      };
+      
+      window.ghlIncrement = function(type) {
+        const config = sliderConfigs[type];
+        const slider = document.getElementById('ghl-' + type + '-slider');
+        const newValue = Math.min(config.max, parseInt(slider.value) + config.step);
+        slider.value = newValue;
+        slider.dispatchEvent(new Event('input'));
+      };
+      
+      window.ghlDecrement = function(type) {
+        const config = sliderConfigs[type];
+        const slider = document.getElementById('ghl-' + type + '-slider');
+        const newValue = Math.max(config.min, parseInt(slider.value) - config.step);
+        slider.value = newValue;
+        slider.dispatchEvent(new Event('input'));
+      };
+      
+      function setupValueDisplayInput(displayId, sliderId, format) {
+        const displayInput = document.getElementById(displayId);
+        const slider = document.getElementById(sliderId);
+        
+        displayInput.addEventListener('input', function() {
+          let value = this.value.replace(/[$,\s]/g, '');
+          if (!isNaN(value) && value !== '') {
+            slider.value = value;
+            slider.dispatchEvent(new Event('input'));
+          }
+        });
+        
+        displayInput.addEventListener('focus', function() {
+          if (format === 'currency') {
+            this.value = this.value.replace(/[$,\s]/g, '');
+          }
+        });
+        
+        displayInput.addEventListener('blur', function() {
+          slider.dispatchEvent(new Event('input'));
+        });
+        
+        displayInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            this.blur();
+          }
+        });
+      }
+      
+      const stepContent = {
+        2: {
+          title: "Thanks, Derek!",
+          subtitle: "Knowing your age helps us calculate how long your portfolio may need to last.",
+          testimonial: null
+        },
+        3: {
+          title: "Have you already retired?",
+          subtitle: "You'll get more accurate results by sharing your retirement status.",
+          testimonial: null
+        },
+        '3-5': {
+          title: "How much longer do you plan to work?",
+          subtitle: "The longer you work, the longer your portfolio may last.",
+          testimonial: null
+        },
+        4: {
+          title: "How many years have you been retired?",
+          subtitle: "Tell us how long you've been living on your retirement savings, so we can see how much longer they may last.",
+          testimonial: null
+        },
+        5: {
+          title: "How much do you save each month for retirement?",
+          subtitle: "This could include your contributions to retirement accounts, employer contributions and any other regular savings.",
+          testimonial: null
+        },
+        6: {
+          title: "How much do you have saved for retirement?",
+          subtitle: "Your investable assets include cash and funds in your bank accounts, retirement accounts and investing accounts, including 401(k)s and IRAs. They do not include real estate or other tangible assets.",
+          testimonial: null
+        },
+        7: {
+          title: "How much monthly income will you need in retirement?",
+          subtitle: "Consider how much you currently spend each month, then estimate what you'll need to maintain your desired lifestyle.",
+          testimonial: null
+        },
+        8: {
+          title: "You're almost there!",
+          subtitle: "Where you live can have a big impact on your cost of living and retirement income needs. Knowing your general location can help us provide more accurate insights.",
+          testimonial: {
+            quote: '"Fisher does an exceptional job in educating, communicating to and caring for clients."',
+            author: "CINDY, 7-year client from GA"
+          }
+        },
+        9: {
+          title: "Last step!",
+          subtitle: "We'd like to stay in touch with information and insights we think you'll find useful. Next stop: your results!",
+          testimonial: {
+            quote: '"My trust in Fisher and their communication helps me sleep better at night."',
+            author: "JOHN, 15-year client from CA"
+          }
+        }
+      };
+      
+      const progressMap = {
+        1: 11,
+        2: 22,
+        3: 33,
+        '3-5': 44,
+        4: 44,
+        5: 56,
+        6: 67,
+        7: 78,
+        8: 89,
+        9: 100
+      };
+      
+      function updateProgress() {
+        const progress = progressMap[currentStep];
+        document.getElementById('ghl-progress').style.width = progress + '%';
+        document.getElementById('ghl-progress-text').textContent = progress + '%';
+      }
+      
+      function updateLeftContent() {
+        const content = stepContent[currentStep];
+        if (content) {
+          const leftContent = document.getElementById('ghl-left-content');
+          let html = `
+            <h1 class="ghl-form-title">${content.title}</h1>
+            <p class="ghl-form-subtitle">${content.subtitle}</p>
+          `;
+          
+          if (content.testimonial) {
+            html += `
+              <div class="ghl-testimonial-section">
+                <div class="ghl-testimonial-label">SEE WHAT OUR CLIENTS SAY</div>
+                <p class="ghl-testimonial-quote">${content.testimonial.quote}</p>
+                <p class="ghl-testimonial-author">${content.testimonial.author}</p>
+                <p class="ghl-testimonial-disclaimer">
+                  Clients are uncompensated for testimonials, which reflect their views at the time.
+                </p>
+              </div>
+            `;
+          }
+          
+          leftContent.innerHTML = html;
+        }
+      }
+      
+      window.ghlNextStep = function() {
+        const currentStepElement = document.getElementById('ghl-step-' + currentStep);
+        
+        if (currentStep === 1) {
+          const title = document.getElementById('ghl-title').value;
+          const firstname = document.getElementById('ghl-firstname').value;
+          const lastname = document.getElementById('ghl-lastname').value;
+          
+          if (!title || !firstname || !lastname) {
+            alert('Please fill in all fields');
+            return;
+          }
+          
+          formData.title = title;
+          formData.firstname = firstname;
+          formData.lastname = lastname;
+          
+          currentStepElement.classList.remove('active');
+          currentStep = 2;
+        } else if (currentStep === 2) {
+          formData.age = document.getElementById('ghl-age-slider').value;
+          
+          currentStepElement.classList.remove('active');
+          currentStep = 3;
+        } else if (currentStep === 3) {
+          if (!formData.hasOwnProperty('retired')) {
+            alert('Please select Yes or No');
+            return;
+          }
+          
+          currentStepElement.classList.remove('active');
+          
+          if (formData.retired === 'yes') {
+            currentStep = 4;
+          } else {
+            currentStep = '3-5';
+          }
+        } else if (currentStep === '3-5') {
+          formData.yearsToWork = document.getElementById('ghl-work-years-slider').value;
+          
+          currentStepElement.classList.remove('active');
+          currentStep = 5;
+        } else if (currentStep === 4) {
+          formData.retiredYears = document.getElementById('ghl-retired-years-slider').value;
+          
+          currentStepElement.classList.remove('active');
+          currentStep = 5;
+        } else if (currentStep === 5) {
+          formData.monthlySavings = document.getElementById('ghl-savings-slider').value;
+          
+          currentStepElement.classList.remove('active');
+          currentStep = 6;
+        } else if (currentStep === 6) {
+          formData.savedAssets = document.getElementById('ghl-assets-slider').value;
+          
+          currentStepElement.classList.remove('active');
+          currentStep = 7;
+        } else if (currentStep === 7) {
+          formData.monthlyIncome = document.getElementById('ghl-income-slider').value;
+          
+          currentStepElement.classList.remove('active');
+          currentStep = 8;
+        } else if (currentStep === 8) {
+          const zipcode = document.getElementById('ghl-zipcode').value;
+          if (zipcode.length !== 5) {
+            alert('Please enter a valid 5-digit zip code');
+            return;
+          }
+          formData.zipcode = zipcode;
+          
+          currentStepElement.classList.remove('active');
+          currentStep = 9;
+        }
+        
+        const nextStepElement = document.getElementById('ghl-step-' + currentStep);
+        nextStepElement.classList.add('active');
+        updateProgress();
+        updateLeftContent();
+      };
+      
+      window.ghlSelectRetired = function(choice) {
+        formData.retired = choice;
+        document.getElementById('ghl-retired-yes').classList.remove('selected');
+        document.getElementById('ghl-retired-no').classList.remove('selected');
+        document.getElementById('ghl-retired-' + choice).classList.add('selected');
+      };
+      
+      window.ghlToggleConsultation = function() {
+        const toggle = document.getElementById('ghl-consultation-toggle');
+        toggle.classList.toggle('active');
+        formData.consultation = toggle.classList.contains('active');
+      };
+      
+      window.ghlSubmitForm = function() {
+        const phone = document.getElementById('ghl-phone').value;
+        const email = document.getElementById('ghl-email').value;
+        
+        if (!phone || !email) {
+          alert('Please fill in all fields');
+          return;
+        }
+        
+        formData.phone = phone;
+        formData.email = email;
+        formData.consultation = document.getElementById('ghl-consultation-toggle').classList.contains('active');
+        
+        sessionStorage.setItem('ghl-retirement-complete', JSON.stringify(formData));
+        
+        console.log('Form submitted:', formData);
+        
+        const event = new CustomEvent('ghlRetirementFormComplete', { detail: formData });
+        window.dispatchEvent(event);
+        
+        showResults();
+      };
+      
+      function showResults() {
+        document.getElementById('ghl-form-container').style.display = 'none';
+        document.getElementById('ghl-results-container').style.display = 'grid';
+        
+        initializeCalculator();
+        setTimeout(function() {
+          createChart();
+        }, 100);
+      }
+      
+      function initializeCalculator() {
+        const age = parseInt(formData.age) || 55;
+        const assets = parseInt(formData.savedAssets) || 1000000;
+        const contributions = parseInt(formData.monthlySavings) || 1400;
+        const expenses = parseInt(formData.monthlyIncome) || 6000;
+        
+        document.getElementById('calc-retirement-age').value = age;
+        document.getElementById('calc-life-expectancy').value = 98;
+        document.getElementById('calc-assets').value = assets.toLocaleString();
+        document.getElementById('calc-assets-slider').value = assets;
+        document.getElementById('calc-contributions').value = contributions.toLocaleString();
+        document.getElementById('calc-contributions-slider').value = contributions;
+        document.getElementById('calc-expenses').value = expenses.toLocaleString();
+        document.getElementById('calc-expenses-slider').value = expenses;
+        
+        setupSidebarSync();
+        calculateResults();
+      }
+      
+      function setupSidebarSync() {
+        const assetsInput = document.getElementById('calc-assets');
+        const assetsSlider = document.getElementById('calc-assets-slider');
+        
+        assetsSlider.addEventListener('input', function() {
+          assetsInput.value = parseInt(this.value).toLocaleString();
+        });
+        
+        assetsInput.addEventListener('input', function() {
+          const val = this.value.replace(/,/g, '');
+          if (!isNaN(val)) {
+            assetsSlider.value = val;
+          }
+        });
+        
+        const contributionsInput = document.getElementById('calc-contributions');
+        const contributionsSlider = document.getElementById('calc-contributions-slider');
+        
+        contributionsSlider.addEventListener('input', function() {
+          contributionsInput.value = parseInt(this.value).toLocaleString();
+        });
+        
+        contributionsInput.addEventListener('input', function() {
+          const val = this.value.replace(/,/g, '');
+          if (!isNaN(val)) {
+            contributionsSlider.value = val;
+          }
+        });
+        
+        const expensesInput = document.getElementById('calc-expenses');
+        const expensesSlider = document.getElementById('calc-expenses-slider');
+        
+        expensesSlider.addEventListener('input', function() {
+          expensesInput.value = parseInt(this.value).toLocaleString();
+        });
+        
+        expensesInput.addEventListener('input', function() {
+          const val = this.value.replace(/,/g, '');
+          if (!isNaN(val)) {
+            expensesSlider.value = val;
+          }
+        });
+        
+        const returnInput = document.getElementById('calc-return-rate');
+        const returnSlider = document.getElementById('calc-return-slider');
+        
+        returnSlider.addEventListener('input', function() {
+          returnInput.value = parseFloat(this.value).toFixed(1);
+        });
+        
+        const inflationInput = document.getElementById('calc-inflation');
+        const inflationSlider = document.getElementById('calc-inflation-slider');
+        
+        inflationSlider.addEventListener('input', function() {
+          inflationInput.value = parseFloat(this.value).toFixed(2);
+        });
+      }
+      
+      function calculateResults() {
+        const retirementAge = parseInt(document.getElementById('calc-retirement-age').value);
+        const lifeExpectancy = parseInt(document.getElementById('calc-life-expectancy').value);
+        const assets = parseInt(document.getElementById('calc-assets').value.replace(/,/g, ''));
+        const monthlyContributions = parseInt(document.getElementById('calc-contributions').value.replace(/,/g, ''));
+        const monthlyExpenses = parseInt(document.getElementById('calc-expenses').value.replace(/,/g, ''));
+        const returnRate = parseFloat(document.getElementById('calc-return-rate').value) / 100;
+        const inflationRate = parseFloat(document.getElementById('calc-inflation').value) / 100;
+        const ssBenefits = parseInt(document.getElementById('calc-ss-benefits').value.replace(/,/g, ''));
+        
+        const yearsInRetirement = lifeExpectancy - retirementAge;
+        const totalNeeded = (monthlyExpenses - ssBenefits) * 12 * yearsInRetirement;
+        const percentage = Math.min(100, Math.max(0, Math.round((assets / totalNeeded) * 100)));
+        const shortfall = Math.abs(totalNeeded - assets);
+        const monthlyWithdrawal = monthlyExpenses - ssBenefits;
+        
+        document.getElementById('shortfall-amount').textContent = '$' + shortfall.toLocaleString();
+        document.getElementById('percentage-estimate').textContent = percentage + '%';
+        document.getElementById('life-expect-display').textContent = lifeExpectancy;
+        document.getElementById('progress-marker').textContent = percentage + '%';
+        document.getElementById('progress-marker').style.left = Math.min(95, Math.max(2, percentage)) + '%';
+        document.getElementById('withdrawal-amount').textContent = '$' + monthlyWithdrawal.toLocaleString();
+      }
+      
+      function createChart() {
+        const canvas = document.getElementById('ghl-retirement-chart');
+        if (!canvas) return;
+        
+        const ctx = canvas.getContext('2d');
+        
+        const currentAge = parseInt(document.getElementById('calc-retirement-age').value);
+        const lifeExpectancy = parseInt(document.getElementById('calc-life-expectancy').value);
+        const assets = parseInt(document.getElementById('calc-assets').value.replace(/,/g, ''));
+        
+        const labels = [];
+        const savedData = [];
+        const neededData = [];
+        
+        const yearsInRetirement = lifeExpectancy - currentAge;
+        
+        for (let age = currentAge; age <= lifeExpectancy; age++) {
+          labels.push(age);
+          const yearsElapsed = age - currentAge;
+          const remainingYears = yearsInRetirement - yearsElapsed;
+          
+          savedData.push(assets * (remainingYears / yearsInRetirement));
+          neededData.push(assets * 2.1 * (remainingYears / yearsInRetirement));
+        }
+        
+        if (retirementChart) {
+          retirementChart.destroy();
+        }
+        
+        retirementChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: 'Amount Needed',
+                data: neededData,
+                backgroundColor: 'rgba(42, 122, 94, 0.4)',
+                borderColor: 'rgba(42, 122, 94, 1)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.1
+              },
+              {
+                label: 'Amount Saved',
+                data: savedData,
+                backgroundColor: 'rgba(26, 90, 74, 0.6)',
+                borderColor: 'rgba(26, 90, 74, 1)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.1
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+              intersect: false,
+              mode: 'index'
+            },
+            plugins: {
+              legend: {
+                display: false
+              },
+              tooltip: {
+                callbacks: {
+                  label: function(context) {
+                    let label = context.dataset.label || '';
+                    if (label) {
+                      label += ': ';
+                    }
+                    label += '$' + Math.round(context.parsed.y).toLocaleString();
+                    return label;
+                  }
+                }
+              }
+            },
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: 'Age',
+                  font: {
+                    size: 12
+                  }
+                },
+                grid: {
+                  display: true,
+                  color: '#e0e0e0'
+                }
+              },
+              y: {
+                beginAtZero: true,
+                title: {
+                  display: false
+                },
+                ticks: {
+                  callback: function(value) {
+                    return '$' + (value / 1000000).toFixed(1) + 'M';
+                  },
+                  font: {
+                    size: 11
+                  }
+                },
+                grid: {
+                  display: true,
+                  color: '#f0f0f0'
+                }
+              }
+            }
+          }
+        });
+      }
+      
+      window.ghlRecalculate = function() {
+        calculateResults();
+        createChart();
+      };
+      
+      const ageSlider = document.getElementById('ghl-age-slider');
+      const ageDisplay = document.getElementById('ghl-age-display');
+      ageSlider.addEventListener('input', function() {
+        ageDisplay.value = this.value;
+        const percent = ((this.value - this.min) / (this.max - this.min)) * 100;
+        this.style.background = `linear-gradient(to right, #1a7a5e 0%, #1a7a5e ${percent}%, #d0d0d0 ${percent}%, #d0d0d0 100%)`;
+      });
+      setupValueDisplayInput('ghl-age-display', 'ghl-age-slider', 'number');
+      
+      const workYearsSlider = document.getElementById('ghl-work-years-slider');
+      const workYearsDisplay = document.getElementById('ghl-work-years-display');
+      workYearsSlider.addEventListener('input', function() {
+        workYearsDisplay.value = this.value;
+        const percent = ((this.value - this.min) / (this.max - this.min)) * 100;
+        this.style.background = `linear-gradient(to right, #1a7a5e 0%, #1a7a5e ${percent}%, #d0d0d0 ${percent}%, #d0d0d0 100%)`;
+      });
+      setupValueDisplayInput('ghl-work-years-display', 'ghl-work-years-slider', 'number');
+      
+      const incomeSlider = document.getElementById('ghl-income-slider');
+      const incomeDisplay = document.getElementById('ghl-income-display');
+      incomeSlider.addEventListener('input', function() {
+        incomeDisplay.value = '$ ' + parseInt(this.value).toLocaleString();
+        const percent = ((this.value - this.min) / (this.max - this.min)) * 100;
+        this.style.background = `linear-gradient(to right, #1a7a5e 0%, #1a7a5e ${percent}%, #d0d0d0 ${percent}%, #d0d0d0 100%)`;
+      });
+      setupValueDisplayInput('ghl-income-display', 'ghl-income-slider', 'currency');
+      
+      const assetsSlider = document.getElementById('ghl-assets-slider');
+      const assetsDisplay = document.getElementById('ghl-assets-display');
+      assetsSlider.addEventListener('input', function() {
+        assetsDisplay.value = '$ ' + parseInt(this.value).toLocaleString();
+        const percent = ((this.value - this.min) / (this.max - this.min)) * 100;
+        this.style.background = `linear-gradient(to right, #1a7a5e 0%, #1a7a5e ${percent}%, #d0d0d0 ${percent}%, #d0d0d0 100%)`;
+      });
+      setupValueDisplayInput('ghl-assets-display', 'ghl-assets-slider', 'currency');
+      
+      const savingsSlider = document.getElementById('ghl-savings-slider');
+      const savingsDisplay = document.getElementById('ghl-savings-display');
+      savingsSlider.addEventListener('input', function() {
+        savingsDisplay.value = '$' + parseInt(this.value).toLocaleString();
+        const percent = ((this.value - this.min) / (this.max - this.min)) * 100;
+        this.style.background = `linear-gradient(to right, #1a7a5e 0%, #1a7a5e ${percent}%, #d0d0d0 ${percent}%, #d0d0d0 100%)`;
+      });
+      setupValueDisplayInput('ghl-savings-display', 'ghl-savings-slider', 'currency');
+      
+      const retiredYearsSlider = document.getElementById('ghl-retired-years-slider');
+      const retiredYearsDisplay = document.getElementById('ghl-retired-years-display');
+      retiredYearsSlider.addEventListener('input', function() {
+        retiredYearsDisplay.value = this.value;
+        const percent = ((this.value - this.min) / (this.max - this.min)) * 100;
+        this.style.background = `linear-gradient(to right, #1a7a5e 0%, #1a7a5e ${percent}%, #d0d0d0 ${percent}%, #d0d0d0 100%)`;
+      });
+      setupValueDisplayInput('ghl-retired-years-display', 'ghl-retired-years-slider', 'number');
+      
+      ageSlider.dispatchEvent(new Event('input'));
+      workYearsSlider.dispatchEvent(new Event('input'));
+      incomeSlider.dispatchEvent(new Event('input'));
+      assetsSlider.dispatchEvent(new Event('input'));
+      savingsSlider.dispatchEvent(new Event('input'));
+      retiredYearsSlider.dispatchEvent(new Event('input'));
+    })();
+  </script>
+</div>
