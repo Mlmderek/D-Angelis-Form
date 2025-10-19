@@ -1087,17 +1087,8 @@
           <input class="ghl-form-input" type="text" id="ghl-lastname" name="lastname" required>
         </div>
         
-        <div class="ghl-form-privacy">
-          By continuing you agree to our <a href="#" target="_blank">privacy policy</a>.
-        </div>
-        
-        
         <button type="button" class="ghl-form-button" onclick="ghlNextStep()">Continue</button>
       </div>
-
-      <div class="ghl-form-privacy">
-          It only takes 30 seconds.
-        </div>
       
       <div id="ghl-step-2" class="ghl-form-step">
         <div class="ghl-slider-instruction">Use the slider or type your age below.</div>
