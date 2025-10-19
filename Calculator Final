@@ -1094,6 +1094,10 @@
         
         <button type="button" class="ghl-form-button" onclick="ghlNextStep()">Continue</button>
       </div>
+
+      <div class="ghl-form-privacy">
+          It only takes 30 seconds.
+        </div>
       
       <div id="ghl-step-2" class="ghl-form-step">
         <div class="ghl-slider-instruction">Use the slider or type your age below.</div>
