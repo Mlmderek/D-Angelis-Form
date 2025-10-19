@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fisher Investments - Retirement Calculator</title>
+  <title>Dangelis Wealth Management - Retire With Clarity Calculator</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 </head>
 <body style="margin: 0; padding: 0; background-color: #f0f0f0;">
@@ -1036,15 +1036,15 @@
   <div id="ghl-form-container" class="ghl-form-wrapper">
     <div class="ghl-form-left">
       <div class="ghl-form-logo">
-        <img src="https://storage.googleapis.com/msgsndr/gJPnHKV9JEFTdRWeEvwu/media/68eeac161c7ccd4f9bfcafeb.svg" alt="Fisher Investments">
+        <img src="https://storage.googleapis.com/msgsndr/gJPnHKV9JEFTdRWeEvwu/media/68eeac161c7ccd4f9bfcafeb.svg" alt="Dangelis Wealth Management Logo">
       </div>
       
       <div class="ghl-testimonial-section">
         <div class="ghl-testimonial-label">SEE WHAT OUR CLIENTS SAY</div>
-        <p class="ghl-testimonial-quote" id="ghl-testimonial-quote">"As a fiduciary, Fisher acts in my best interests."</p>
-        <p class="ghl-testimonial-author" id="ghl-testimonial-author">WILLIAM, 7-year client from TX</p>
+        <p class="ghl-testimonial-quote" id="ghl-testimonial-quote">"My wife and I have been clients of D'Angelis Wealth Management since 2011. We would recommend them to anybody looking for personalized, custom wealth management services."</p>
+        <p class="ghl-testimonial-author" id="ghl-testimonial-author">Alex, Engineer</p>
         <p class="ghl-testimonial-disclaimer">
-          Clients are uncompensated for testimonials, which reflect their views at the time.
+          The client has not been paid or received any other compensation for making these statements.
         </p>
       </div>
     </div>
