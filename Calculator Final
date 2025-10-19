@@ -1040,7 +1040,7 @@
       </div>
       
       <div class="ghl-testimonial-section">
-        <div class="ghl-testimonial-label">SEE WHAT OUR CLIENTS SAY</div>
+        <div class="ghl-testimonial-label">WHAT OUR CLIENTS SAY</div>
         <p class="ghl-testimonial-quote" id="ghl-testimonial-quote">"My wife and I have been clients of D'Angelis Wealth Management since 2011. We would recommend them to anybody looking for personalized, custom wealth management services."</p>
         <p class="ghl-testimonial-author" id="ghl-testimonial-author">Alex, Engineer</p>
         <p class="ghl-testimonial-disclaimer">
@@ -1058,7 +1058,7 @@
       <img src="https://storage.googleapis.com/msgsndr/Tp2GUtId23hBhunAlIrY/media/68f43e4d5b0b7d43fb5fbb11.png" alt="Profile" class="ghl-profile-image">
       
       <div class="ghl-step-header" id="ghl-step-header">
-        <h2 class="ghl-step-title">Personalize Your Experience</h2>
+        <h2 class="ghl-step-title">Hey, I'm Laura! Let's Get Started</h2>
         <p class="ghl-step-description">Knowing a bit about you helps us tailor retirement insights to your situation. We value your privacy, and we'll never sell your personal information.</p>
       </div>
       
@@ -1091,9 +1091,6 @@
           By continuing you agree to our <a href="#" target="_blank">privacy policy</a>.
         </div>
         
-        <div class="ghl-form-privacy">
-          California and Oregon residents <a href="#" target="_blank">here</a>.
-        </div>
         
         <button type="button" class="ghl-form-button" onclick="ghlNextStep()">Continue</button>
       </div>
